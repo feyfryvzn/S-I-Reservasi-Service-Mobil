@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Make navbar fullscreen and stick to top */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1050;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* Adjust wrapper to account for fixed navbar */
+.wrapper {
+    margin-top: 60px; /* Adjust based on navbar height */
+}
+
+/* Sidebar Styling */
+#sidebar {
+  position: fixed;
+  top: 60px; /* Offset for fixed navbar height */
+  left: -250px; /* Hidden by default */
+  width: 250px;
+  min-height: calc(100% - 60px); /* Minimum height to fill viewport minus navbar */
+  background: #212f3c; /* Dark background */
+  transition: left 0.3s ease;
+  z-index: 1000; /* Below navbar (z-index 1050) */
+  color: #fff; /* White text */
+  overflow-y: auto; /* Enable scrolling for long content */
+}
+
+#sidebar.active {
+  left: 0; /* Slide in when active */
+}
+
+/* Logo Styling */
+#sidebar .logo {
+  border: 2px solid #fff; /* White border for logo */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Shadow effect */
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* List Items Styling */
+#sidebar ul.components {
+  padding: 0;
+  margin-bottom: 20px; /* Space for footer */
+}
+
+#sidebar ul.components li {
+  margin-bottom: 5px;
+}
+
+#sidebar ul.components li a {
+  color: #fff; /* White text */
+  padding: 5px 10px; /* Consistent padding */
+  display: block;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#sidebar ul.components li a:hover {
+  background: #34495e; /* Lighter background on hover */
+  color: #f39c12; /* Orange text on hover */
+  text-decoration: none;
+}
+
+/* Active Item Styling */
+#sidebar ul.components li.active a {
+  background: #34495e; /* Background for active item */
+  color: #f39c12; /* Text color for active item */
+}
+
+/* Footer Styling */
+#sidebar .footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #bdc3c7; /* Light gray text for footer */
+}
+
+#sidebar .footer i {
+  color: #e74c3c; /* Red heart icon */
+}
+
+/* Content Styling */
+#content {
+  transition: margin-left 0.3s ease;
+  width: 100%;
+  margin-left: 0; /* Default state with sidebar hidden */
+  padding: 20px; /* Consistent padding */
+}
+
+#content.sidebar-open {
+  margin-left: 250px; /* Shift content when sidebar is active */
+}
+
+/* Navbar Styling */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
+}
+
+/* Button Container */
+.add-button-container {
+  text-align: end;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
